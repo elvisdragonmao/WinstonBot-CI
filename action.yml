@@ -34,8 +34,12 @@ runs:
       shell: bash
       continue-on-error: true
 
-    - name: No space for 毛哥EM
-      run: find . -type f -exec sed -i 's/毛哥 EM/毛哥EM/g' {} +
+    - name: No space & rename 毛哥EM
+      run: |
+        find . -type f -exec sed -i \
+          -e 's/毛哥 EM/毛哥EM/g' \
+          -e 's/毛哥EM 資訊密技/毛哥EM資訊密技/g' \
+          {} +
       shell: bash
       continue-on-error: true
 
